@@ -1,0 +1,17 @@
+---
+ - hosts: praveen1,praveen3
+   become: true
+   gather_facts: true
+   tasks:
+     - name : install git
+       yum:
+         name: git 
+         state: present
+       notify:
+         - stop git
+   handlers:
+     - name: stop git
+       service:
+         name: git
+         state: absent
+

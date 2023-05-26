@@ -1,0 +1,23 @@
+---
+ - hosts: praveen1,praveen2
+   become: true
+   gather_facts: true
+   vars:
+     folder: praveenakumara
+   tasks:
+     - name: use with conditions create folder
+       stat:
+         path: /opt/praveenakumara
+       register: naik
+     - debug:
+        msg:
+       when: naik.stat.exists == true
+
+     - name: create a folder
+       file:
+         path: /opt/{{folder}}
+         state: directory
+       when: naik.stat.exists != true
+
+
+

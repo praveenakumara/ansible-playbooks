@@ -1,0 +1,11 @@
+---
+ - hosts: praveen1,praveen2,praveen3,praveen4
+   become: true
+   gather_facts: true
+   tasks:
+     - name: change the ownership of directory
+       file:
+         path: /var/
+         owner: master
+         group: master
+         mode: 0755

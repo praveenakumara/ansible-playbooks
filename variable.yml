@@ -1,0 +1,13 @@
+---
+ - hosts: praveen1,praveen3,praveen4
+   become: true
+   gather_facts: true
+   vars:
+     name: praveen
+     place: bangalore
+     graduate: BE in CIVIL
+   tasks:
+     - name: defining variables
+       debug:
+         msg: my name is {{name}} from {{place}} i am {{graduate}}
+

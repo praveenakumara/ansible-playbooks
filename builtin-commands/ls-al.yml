@@ -1,0 +1,11 @@
+---
+ - hosts: praveen3,praveen4
+   become: true
+   gather_facts: true
+   tasks:
+     - name: long listing of the file
+       register: list
+       command: "ls -al"
+
+     - debug:
+         var: list.stdout_lines

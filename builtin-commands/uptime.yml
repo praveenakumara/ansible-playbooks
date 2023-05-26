@@ -1,0 +1,15 @@
+---
+ - hosts: praveen1,praveen2,praveen3
+   become: true
+   tasks:
+     - name: uptime of server
+       register: uptimeoutput
+       command: "uptime"
+     - debug:
+         var: uptimeoutput.stdout_lines
+
+     - name: uname of the server
+       register: unameofserver
+       command: "uname -ar"
+     - debug:
+         var: unameofserver.stdout_lines

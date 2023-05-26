@@ -1,0 +1,11 @@
+---
+ - hosts: praveen1,praveen2,praveen3
+   become: true
+   gather_facts: true
+   tasks:
+     - name: check the version of the python
+       register: pythonversion
+       command: "python --version"
+
+     - debug:
+         var: pythonversion.stdout_lines

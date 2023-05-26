@@ -1,0 +1,10 @@
+---
+ - hosts: praveen1,praveen2,praveen3
+   become: true
+   tasks:
+     - name: disk-usage of the server
+       register: diskusage
+       command: "df -h"
+
+     - debug:
+         var: diskusage.stdout_lines

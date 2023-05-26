@@ -1,0 +1,10 @@
+---
+ - hosts: praveen1,praveen2,praveen3,praveen4,praveen5
+   become: true
+   gather_facts: true
+   tasks:
+     - name: check the commands
+       shell: lsblk
+       register: naik
+     - debug:
+         var: naik

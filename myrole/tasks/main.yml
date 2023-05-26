@@ -1,0 +1,12 @@
+---
+ - name: creating file and folder
+   file:
+     path: /var/ {{item}}
+     state: absent
+   with_items:
+     - praveen
+     - omkar
+     - rahul
+     - virat
+     - shiv
+     - ram

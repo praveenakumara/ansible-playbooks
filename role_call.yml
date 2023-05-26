@@ -1,0 +1,4 @@
+---
+ - hosts: praveen1,praveen2,praveen3,praveen4
+   roles:
+     - myrole

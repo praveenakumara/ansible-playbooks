@@ -1,0 +1,16 @@
+---
+ - hosts: praveen3,praveen4
+   become: true
+   tasks:
+     - name: install httpd using when conditions
+       command: rpm -q httpd
+       register: install
+       ignore_errors: true
+
+     - name: install
+       yum:
+         name: httpd
+         state: present
+       when: install.rc != 0
+ 
+
