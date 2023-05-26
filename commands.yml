@@ -1,0 +1,22 @@
+---
+ - hosts: praveen3,praveen4
+   become: true
+   gather_facts: true
+   tasks:
+     - name: run the commands
+       shell: df -hT
+       register: praveen
+     - debug:
+         var: praveen
+
+     - name: run the commands
+       shell: lsblk
+       register: naik
+     - debug:
+         var: naik
+
+     - name: run the top commads
+       shell: ls -al
+       register: omkar
+     - debug:
+         var: omkar

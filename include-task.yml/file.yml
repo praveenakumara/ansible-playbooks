@@ -1,0 +1,12 @@
+---
+       - name: creating file
+         file:
+           path: /usr/ {{item}}
+           state: absent
+         with_items:
+           - naik
+           - kumar
+           - hello
+           - omkar
+           - praveen
+           - wadera

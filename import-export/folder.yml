@@ -1,0 +1,11 @@
+---
+   - name: create folder
+     file:
+       path: /var/ {{item}}
+       state: touch
+     with_items: 
+       - hello
+       - omkar
+       - praveen
+       - naik
+       - virat

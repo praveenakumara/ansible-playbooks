@@ -1,0 +1,10 @@
+---
+ - hosts: praveen4
+   become: true
+   gather_facts: true
+   tasks:
+     - name: pull from target to master
+       copy:
+         src: /home/shiv4
+         dest: /home/
+         delegate_to: praveen1

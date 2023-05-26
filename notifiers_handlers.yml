@@ -1,0 +1,17 @@
+---
+ - hosts: praveen1,praveen2,praveen3,praveen4
+   become: true
+   gather_facts: true
+   tasks:
+     - name: notifiers and hadlers
+       yum:
+         name: httpd
+         state: present
+       notify:
+         - start httpd
+       handlers:
+         - name: start httpd
+           service:
+             name: httpd
+             state: started
+

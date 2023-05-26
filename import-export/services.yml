@@ -1,0 +1,13 @@
+---
+   - name: install packages
+     yum:
+       name:
+         - docker
+         - git
+         - httpd
+         - tree
+   - name: start docker
+     yum:
+       name:
+         - docker
+       enabled: yes

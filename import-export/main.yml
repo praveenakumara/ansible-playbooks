@@ -1,0 +1,10 @@
+---
+ - hosts: praveen4,praveen1
+   become: true
+   gather_facts: true
+   tasks:
+     - name: importing tasks
+       import_tasks: services.yml
+       import_tasks: folder.yml
+       import_tasks: user.yml
+

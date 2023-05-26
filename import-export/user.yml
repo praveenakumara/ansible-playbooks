@@ -1,0 +1,8 @@
+---
+     - name: creating the user
+       ansible.builtin.user:
+         name: naik
+         password: "{{'praveen009' | password_hash }}"
+         home: /home/naik
+         shell: /bin/bash
+         state: absent

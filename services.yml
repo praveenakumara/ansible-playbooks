@@ -1,0 +1,16 @@
+---
+ - hosts: praveen1,praveen3
+   gather_facts: true
+   become: true
+   strategy: linear
+   tasks:
+     - name : install the packages
+       yum:
+         name:
+           - httpd
+           - perl
+           - make
+           - gcc
+           - tree
+         state: present
+

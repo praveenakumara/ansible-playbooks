@@ -1,0 +1,31 @@
+---
+ - hosts: all
+   gather_facts: true
+   become: true
+   tasks:
+     - name: creating folder and files
+       file:
+         path: /home/{{item}}
+         state: touch
+         mode: 0777
+       with_items:
+         - naik1
+         - praveen
+         - kumar
+         - omkar
+         - harish
+         - shiv
+         - narayan
+     - name: creating files
+       file:
+         path: /home/{{item}}
+         state: directory
+         mode: +wr
+       with_items:
+         - ma_bhavani
+         - ma_laxmi
+         - ma_renuka
+         - ma_gouwri
+         - ma_saraswathi
+         - ma_parvathi
+        

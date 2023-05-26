@@ -1,0 +1,13 @@
+---
+ - hosts: praveen4
+   become: true
+   gather_facts: true
+   tasks:
+     - name: copy file from target machine to target machine
+       synchronize:
+         src: /home/master/shiv4
+         dest: /home/
+         mode: push
+         
+      
+   
