@@ -6,12 +6,12 @@
      - name: notifiers and hadlers
        yum:
          name: httpd
-         state: present
+         state: latest
        notify:
-         - start httpd
-       handlers:
-         - name: start httpd
-           service:
-             name: httpd
-             state: started
+        - start httpd
+   handlers:
+      - name: start httpd
+        service:
+           name: httpd
+           state: started
 
